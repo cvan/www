@@ -46,7 +46,7 @@
     <ul>
       <li class="selected"><a href="#product">Product</a></li>
       <li><a href="#pricing">Pricing</a></li>
-      <li><a href="https://pinecast.com/login">Sign In</a></li>
+      <li><a href="https://pinecast.com/login" class="login">Sign In</a></li>
     </ul>
     <a class="btn btn-lines" href="https://pinecast.com/signup/">Sign Up</a>
   </div>
@@ -158,7 +158,7 @@
 </footer>
 
 <script>
-(function() {
+(function () {
   var atTop = true;
   var header = document.querySelector('header');
   var product = header.querySelector('[href="#product"]');
@@ -166,7 +166,7 @@
 
   var pricingBox = document.querySelector('.plans-pricing');
 
-  function cb() {
+  function cb () {
     if (atTop && window.scrollY !== 0) {
       atTop = false;
       header.className = 'header-scrolling';
@@ -183,12 +183,10 @@
       pricing.parentNode.className = '';
       product.parentNode.className = 'selected';
     }
-
   }
 
   window.addEventListener('scroll', cb);
-  window.addEventListener('ohhashchange', cb);
-
+  window.addEventListener('hashchange', cb);
 }());
 </script>
 <script>
